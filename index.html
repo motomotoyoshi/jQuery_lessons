@@ -6,27 +6,13 @@
 </head>
 <body>
    <p>Jqueryの練習</p>
-   <ul id="main">
-       <li>0</li>
-       <li class="item">1</li>
-       <li>2</li>
-       <li>
-           3
-           <ul id="sub">
-               <li>3-0</li>
-               <li  class="item">3-1</li>
-               <li>3-2</li>
-               <li  class="item">3-3</li>
-               <li>3-4</li>
-           </ul>
-       </li>
-   </ul>
+   <a href="https://google.com">Google</a>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         // $(document).ready(function) {
         $(function() {
-            $('p').css('color', 'pink');
-            console.log($('p').css('color'));
+            console.log($('a').attr('href'));
+            $('a').attr('href', 'https://google.co.jp')
         });
     </script>
 </p> 
