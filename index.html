@@ -11,11 +11,17 @@
     <script>
         // $(document).ready(function) {
         $(function() {
-            // $('#box').hide(1500);
-            $('#box').toggle(1500);
-            $('#box').toggle(1500);
-            $('#box').toggle(1500, function() {
-                alert('gone');
+            $('#box').click(function() {
+                alert('hihi');
+            });
+            $('#box').mouseover(function() {
+                $(this).css('background', 'green');
+            })
+            .mouseout(function() {
+                $(this).css('background', 'pink');
+            })
+            .mousemove(function(e) {
+                $(this).text(e.pageX);
             });
         });
     </script>
