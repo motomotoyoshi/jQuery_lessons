@@ -6,25 +6,16 @@
 </head>
 <body>
    <p>Jqueryの練習</p>
-   <input type="text" id="name">
-   <select name="members" id="members">
-       <option>oki</option>
-       <option>myq</option>
-       <option>soraha</option>
-   </select>
+   <button>add</button>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        // $(document).ready(function) {
         $(function() {
-            $('#name')
-                .focus(function() {
-                   $(this).css('background', 'pink');
-                })
-                .blur(function() {
-                    $(this).css('background', 'white');
-                });
-            $('#members').change(function() {
-                alert('changed');
+            $('button').click(function() {
+                let p =$('<p>').text('ok').addClass('ok');
+                $(this).before(p);
+            });
+            $('body').on('click', '.ok', function() {
+                $(this).remove();
             });
         });
     </script>
