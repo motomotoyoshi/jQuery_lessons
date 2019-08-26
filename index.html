@@ -6,22 +6,25 @@
 </head>
 <body>
    <p>Jqueryの練習</p>
-   <div id="box" style="width: 100px; height: 100px; background: pink;"></div>
+   <input type="text" id="name">
+   <select name="members" id="members">
+       <option>oki</option>
+       <option>myq</option>
+       <option>soraha</option>
+   </select>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         // $(document).ready(function) {
         $(function() {
-            $('#box').click(function() {
-                alert('hihi');
-            });
-            $('#box').mouseover(function() {
-                $(this).css('background', 'green');
-            })
-            .mouseout(function() {
-                $(this).css('background', 'pink');
-            })
-            .mousemove(function(e) {
-                $(this).text(e.pageX);
+            $('#name')
+                .focus(function() {
+                   $(this).css('background', 'pink');
+                })
+                .blur(function() {
+                    $(this).css('background', 'white');
+                });
+            $('#members').change(function() {
+                alert('changed');
             });
         });
     </script>
