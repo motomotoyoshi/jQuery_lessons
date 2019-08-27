@@ -13,7 +13,9 @@
     <script>
         $(function() {
             $('button').click(function() {
-                $('#result').load('more.html')
+                $('#result').load('more.html', function() {
+                    $('#message').css('color', 'pink');
+                });
             });
         });
     </script>
