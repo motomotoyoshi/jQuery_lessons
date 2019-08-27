@@ -7,14 +7,19 @@
 <body>
    <p>Jqueryの練習</p>
 
-   <button>もっと読む</button>
+   <p>
+       <input type="text" name="name" id="name">
+       <input type="button" id="greet" value="Greet">
+   </p>
    <div id="result"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         $(function() {
-            $('button').click(function() {
-                $('#result').load('more.html', function() {
-                    $('#message').css('color', 'pink');
+            $('#greet').click(function() {
+                $.get('greet.php', {
+                    name: $('#name').val()
+                }, function(data) {
+                    $('#result').html(data.message + '(' + data.length + ')');
                 });
             });
         });
