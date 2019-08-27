@@ -6,16 +6,14 @@
 </head>
 <body>
    <p>Jqueryの練習</p>
-   <button>add</button>
+
+   <button>もっと読む</button>
+   <div id="result"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         $(function() {
             $('button').click(function() {
-                let p =$('<p>').text('ok').addClass('ok');
-                $(this).before(p);
-            });
-            $('body').on('click', '.ok', function() {
-                $(this).remove();
+                $('#result').load('more.html')
             });
         });
     </script>
